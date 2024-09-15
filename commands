@@ -1,0 +1,20 @@
+Git Commands 
+
+git init [ initialize git ]
+git add . [ to add all files in git ]
+git pull origin master [ to get pull from master ]
+git pull origin stagging [ to get pull from stagging ]
+git checkout stagging [ to checkout new branch ]
+git remote set-url origin urlofproject [ to set git remote url 
+git commit -m "Explore" [ to enter comment while committing files ]
+git push -u stagging(branch name) [ this will stage files in GitHub ]
+git config --global github.user YOUR_USERNAME [ to set user name ]
+git config --global github.email email [ to set user email ]
+git config --global user.name nameOfUser [ to set user/author name ]
+git config -- global user.email emailOfUser [ to set email of author/user ]
+git config user.name kakerublaze [ setting for only particular git ]
+git config -l [ to get all details ]
+git clone git@github.com:YOUR_USERNAME/YOUR_PROJECT.git [ cloning a project ]
+git remote add origin urlofproject [ to add remote path's ]
+git push -u origin main [ pushing code inside main ]
+git branch -M main [ creates main branch & set main branch ]
