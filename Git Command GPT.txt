@@ -1,0 +1,221 @@
+--> Git Commands
+1. Git Setup
+# Set username
+git config --global user.name "Your Name"
+
+# Set email
+git config --global user.email "your_email@example.com"
+
+# Check configuration settings
+git config --list
+
+# Initialize a new Git repository
+git init
+
+
+2. Basic Commands
+# Clone a repository
+git clone <repository_url>
+
+# Check the status of files (tracked, untracked, modified)
+git status
+
+# Stage files for commit
+git add <file_name>
+git add .   # Add all files
+
+# Commit changes with a message
+git commit -m "Commit message"
+
+# Check commit history
+git log
+
+# Display one-line commit history
+git log --oneline
+
+# See differences between working directory and staging area
+git diff
+
+
+3. Branching & Merging
+# Create a new branch
+git branch <branch_name>
+
+# Switch to a different branch
+git checkout <branch_name>
+
+# Create a new branch and switch to it
+git checkout -b <new_branch_name>
+
+# Merge a branch into the current branch
+git merge <branch_name>
+
+# List all branches
+git branch
+
+# Delete a branch
+git branch -d <branch_name>
+
+
+4. Remote Repositories
+# Add a remote repository
+git remote add origin <remote_repository_url>
+
+# List remote repositories
+git remote -v
+
+# Fetch changes from a remote repository
+git fetch origin
+
+# Push local changes to a remote repository
+git push origin <branch_name>
+
+# Pull changes from a remote repository
+git pull origin <branch_name>
+
+# Push a new branch to remote
+git push -u origin <new_branch_name>
+
+
+5. Stashing & Cleaning
+# Save uncommitted changes for later
+git stash
+
+# List all stashes
+git stash list
+
+# Apply the latest stash
+git stash apply
+
+# Apply a specific stash
+git stash apply stash@{2}
+
+# Drop a stash
+git stash drop
+
+# Clean untracked files from the working directory
+git clean -f
+
+
+6. Tagging
+# Create a lightweight tag
+git tag <tag_name>
+
+# Create an annotated tag
+git tag -a <tag_name> -m "Tag message"
+
+# List all tags
+git tag
+
+# Push tags to a remote repository
+git push origin --tags
+
+# Delete a tag
+git tag -d <tag_name>
+
+# Delete a remote tag
+git push origin --delete tag <tag_name>
+
+
+7. Undoing Changes
+# Undo changes in the working directory
+git checkout -- <file_name>
+
+# Unstage a file (without modifying it)
+git reset <file_name>
+
+# Reset to a previous commit (soft: keep changes, hard: discard changes)
+git reset --soft <commit_hash>
+git reset --hard <commit_hash>
+
+# Revert a commit by creating a new commit
+git revert <commit_hash>
+
+
+8. Advance Commands
+# Amend the most recent commit (e.g., to modify the commit message)
+git commit --amend -m "Updated commit message"
+
+# Rebase: apply changes from one branch onto another
+git rebase <branch_name>
+
+# Interactive rebase for modifying commit history
+git rebase -i <commit_hash>
+
+# Cherry-pick a specific commit to another branch
+git cherry-pick <commit_hash>
+
+# Squash multiple commits into one
+git rebase -i HEAD~n   # Where n is the number of commits
+
+# Bisect: find the commit that introduced a bug
+git bisect start
+git bisect bad
+git bisect good <commit_hash>
+
+
+9. Collaborating & Reviewing
+# Create and apply a patch
+git format-patch <commit_hash>
+git apply <patch_file>
+
+# Show commit and file changes graphically
+gitk
+
+# Show a graphical log of all branches
+git log --graph --oneline --all
+
+
+10. Git Alliases (Custom Shortcuts)
+# Create a Git alias for a command
+git config --global alias.st status
+git config --global alias.cm "commit -m"
+git config --global alias.br branch
+git config --global alias.co checkout
+
+
+11. Git Submodules
+# Add a submodule (another repository inside your repository)
+git submodule add <repository_url> <path>
+
+# Initialize and clone submodules
+git submodule update --init --recursive
+
+# Pull changes in submodules
+git submodule update --remote
+
+# Remove a submodule
+git submodule deinit -f <path>
+git rm <path>
+rm -rf .git/modules/<path>
+
+
+12. Git Diff & Patch
+# Create a patch file from differences
+git diff > patch.diff
+
+# Apply a patch file
+git apply patch.diff
+
+
+13. Git Blame & Annotate
+# Show who modified each line of a file
+git blame <file_name>
+
+# Annotate commit history in a file
+git annotate <file_name>
+
+
+14. Git LFS (Large File Storage)
+# Install Git LFS
+git lfs install
+
+# Track large files (e.g., image, video)
+git lfs track "*.psd"
+
+# Add and commit as usual
+git add <file_name>
+git commit -m "Track large file"
+
+# Push to remote
+git push origin <branch_name>
